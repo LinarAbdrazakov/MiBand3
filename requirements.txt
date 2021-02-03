@@ -2,3 +2,4 @@ bluepy
 pycrypto
 curses-menu
 crc16
+pyserial

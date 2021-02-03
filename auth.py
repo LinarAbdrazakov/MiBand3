@@ -304,6 +304,12 @@ class MiBand3(Peripheral):
         char = svc.getCharacteristics(UUIDS.CHARACTERISTIC_CUSTOM_ALERT)[0]
         char.write(base_value+phone, withResponse=True)
 
+	def send_gas_alert(self, type_of_gas):
+        base_value = '\x05\x01'
+        svc = self.getServiceByUUID(UUIDS.SERVICE_ALERT_NOTIFICATION)
+        char = svc.getCharacteristics(UUIDS.CHARACTERISTIC_CUSTOM_ALERT)[0]
+        char.write(base_value+type_of_gas, withResponse=True)
+    
     def change_date(self):
         print('Change date and time')
         svc = self.getServiceByUUID(UUIDS.SERVICE_MIBAND1)

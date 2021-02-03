@@ -48,7 +48,7 @@ def updateFirmware():
     band.dfuUpdate(fileName)
 
 band = MiBand3(MAC_ADDR, debug=True)
-band.setSecurityLevel(level = "medium")
+#band.setSecurityLevel(level = "medium")
 
 # Authenticate the MiBand
 if len(sys.argv) > 2:
